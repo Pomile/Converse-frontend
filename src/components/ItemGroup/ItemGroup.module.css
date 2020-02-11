@@ -1,0 +1,5 @@
+.ItemGroup{
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-around;
+}
