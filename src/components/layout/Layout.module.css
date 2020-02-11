@@ -1,0 +1,9 @@
+.LayoutHeight{
+    height: 100vh;
+    min-height: 700px;
+}
+
+.LayoutBg{
+    background-color: whitesmoke;
+}
+
