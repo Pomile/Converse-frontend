@@ -1,0 +1,13 @@
+.OrganizationName {
+  width: 123px;
+  height: 18px;
+  font-family: IBMPlexSans;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding: 3px 4px;
+}
