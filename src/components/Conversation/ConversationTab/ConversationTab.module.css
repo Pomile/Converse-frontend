@@ -1,0 +1,20 @@
+.ConversationTab{
+    padding-top: 8px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.TabPills{
+    padding: 0.2rem 0.4rem;
+    border-radius: 30%;
+    cursor: pointer;
+    font-family: IBMPlexSans;
+    font-size: small;
+    color: #595e8a;
+    margin-left: 0.5rem;
+}
+
+.Active{
+    background-color: #f6fafd;;
+
+}

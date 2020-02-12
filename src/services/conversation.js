@@ -4,8 +4,7 @@ export class ConversationService {
         this.conversations = data;
         this.users = users;
     }
-
-
+    
     /**
      * Gets up-to-date list of conversations by status.
      * conversation status could be open, archived, snooze, or trash
@@ -25,7 +24,19 @@ export class ConversationService {
             }).filter((conversation) => conversation !== null);
             return conversationDetail;
         }
-        return;
+        return [];
     }
 
+    async getConversationsById(conversationId) {
+        const conversationsCopy = [...this.conversations];
+        const usersCopy = [...this.users]
+        const conversation = conversationsCopy.find((c) => c.id === conversationId);
+        if (conversation !== -1) {
+            const user = usersCopy.find((x) => x.id === conversation.userId);
+            conversation.user = user;
+            return conversation
+        }
+        
+        return null;
+    }
 }

@@ -2,27 +2,22 @@
   {
     "id": "ad324366-384a-4aa4-a1d9-e373b0f790d0",
     "userId": 1,
-    "title": "Most popular phones",
+    "title": "Android vs iPhone: Which is best for you?",
     "status": "open",
-    "content": "",
-    "social": "tweeter"
+    "content": "Android phones vary widely in size, weight, features, and quality. Premium-priced Android phones tend to be as good as the iPhone in terms of hardware quality, but cheaper Android options are more prone to problems. Of course iPhones can have hardware issues, too, but they're generally higher quality.",
+    "social": "tweeter",
+    "attachment": true,
+    "dateTime": "24hrs"
   },
   {
     "id": "cbe349af-a5ae-47e2-8d2b-07441a783fb7",
     "userId": 2,
     "title": "Why you should use Iphone7",
-    "status": "open",
-    "content": "",
-    "social": "whatsapp"
-    
-  },
-  {
-    "id": "4822e046-eee3-4a3a-b9be-f850f48ea5df",
-    "userId": 3,
-    "title": "Android market share",
-    "status": "open",
-    "content": "",
-    "social": "apple"
+    "status": "Snooze",
+    "content": "Android is developed by Google. It sticks its own Pixel-flavoured version on its Pixel phones, and lets the likes of Samsung, LG, Huawei and others add their own skins on top for their own hardware.",
+    "social": "tweeter",
+    "attachment": true,
+    "dateTime": "July 21"
   },
 
   {
@@ -30,8 +25,10 @@
     "userId": 3,
     "title": "Used Electronic equipment not working",
     "status": "open",
-    "content": "",
-    "social": "apple"
+    "content": "When the electricity is not properly used, it results in electrical shocks with a nasty experience. ... There are at times when electronic appliances go bad or problems occur due to faulty ... It is advisable not to work with energized wires or circuits",
+    "social": "whatsapp",
+    "attachement": false,
+    "dateTime": "Aug 24"
   }
 
 ]
