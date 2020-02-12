@@ -1,0 +1,86 @@
+.ConversationCard{
+    height: 88px;
+    width: 90%;
+    margin-top: 15px;
+    margin-left: 2%;
+    padding-bottom: 10px;
+    display: flex;
+    
+    border-bottom: 0.5px solid rgb(230, 230, 230);
+    cursor: pointer;
+
+}
+
+.ConversationCard__Social{
+    padding: 0.4rem;
+
+}
+
+.ConversationCard__Content{
+    height: 90%;
+    width: 96%;
+
+}
+
+
+.ConversationCard__Header{
+   padding-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ConversationCard__Name{
+  color: #212242;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: IBMPlexSans;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ConversationCard__DateTime{
+  height: 13px;
+  opacity: 0.5;
+  font-family: IBMPlexSans;
+  font-size: 10px;
+  text-align: right;
+  color: #5e6c84;
+  text-align: center;
+}
+
+
+.ConversationCard__Body{
+  display: flex;
+}
+
+
+.ConversationCard__Title{
+  color: #595e8a;
+  font-size: small;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  width: 250px;
+}
+.ConversationCard__Content{
+  color: #595e8a;
+  font-size: small;
+  overflow: hidden;
+}
+
+.ConversationCard__ItemList{
+  padding: -21px 0.5rem;
+}
+.ConversationCard__Badge{
+
+}
+.ConversationCard__Icon{
+
+}
+
+
+
+
+
