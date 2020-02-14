@@ -1,0 +1,10 @@
+.ActionTool2__Button{
+    width: 67px;
+    height: 32px;
+    padding: 3px 0px;
+    text-align: center;
+    font-size: small;
+    border: 0.5px solid gainsboro;
+    border-radius: 20px;
+
+}
