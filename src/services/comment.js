@@ -12,11 +12,11 @@ export class CommentsService {
      * @param messageId
      */
     async getComments(messageId) {
+        
         const commentsCopy = [...this.comments];
         const userCopy = [...this.users];
         const msgComments = commentsCopy
             .filter((comment) => comment.messageId === messageId);
-
         if (msgComments.length !== 0) {
             const commentsDetail = msgComments.map((comment) => {
                 const user = userCopy.find((user) => user.id === comment.userId);
@@ -29,6 +29,7 @@ export class CommentsService {
 
             return commentsDetail;
         }
+        return [];
     }
 
     /**

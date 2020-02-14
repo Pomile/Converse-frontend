@@ -4,7 +4,10 @@ import { Message } from './Message/Message';
 export const MessageList = (props) => {
 
     const messages =props.messages !==null ? props.messages.map((message) => <Message
-        key={message.id} data={ message } viewerId={props.userId} />) : null;
+        key={message.id} data={message}
+        viewerId={props.userId}
+        getComments = {props.getComments}
+    />) : null;
     return (
         <div> 
             {messages}
