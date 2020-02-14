@@ -7,7 +7,8 @@
     "content": "Android phones vary widely in size, weight, features, and quality. Premium-priced Android phones tend to be as good as the iPhone in terms of hardware quality, but cheaper Android options are more prone to problems. Of course iPhones can have hardware issues, too, but they're generally higher quality.",
     "social": "tweeter",
     "attachment": true,
-    "dateTime": "24hrs"
+    "dateTime": "24hrs",
+    "unread": 2
   },
   {
     "id": "cbe349af-a5ae-47e2-8d2b-07441a783fb7",
@@ -17,7 +18,9 @@
     "content": "Android is developed by Google. It sticks its own Pixel-flavoured version on its Pixel phones, and lets the likes of Samsung, LG, Huawei and others add their own skins on top for their own hardware.",
     "social": "tweeter",
     "attachment": true,
-    "dateTime": "July 21"
+    "dateTime": "July 21",
+    "unread": 0
+
   },
 
   {
@@ -28,7 +31,8 @@
     "content": "When the electricity is not properly used, it results in electrical shocks with a nasty experience. ... There are at times when electronic appliances go bad or problems occur due to faulty ... It is advisable not to work with energized wires or circuits",
     "social": "whatsapp",
     "attachement": false,
-    "dateTime": "Aug 24"
+    "dateTime": "Aug 24",
+    "unread": 0
   }
 
 ]

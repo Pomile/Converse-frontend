@@ -1,0 +1,8 @@
+.Toolbox{
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgb(233, 233, 233);
+    width: 100%;
+    margin-top: -8px;
+    display: flex;
+    justify-content: space-between;
+}

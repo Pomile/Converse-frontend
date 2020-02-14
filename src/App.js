@@ -1,4 +1,5 @@
 import React from 'react';
+import './fontawesome';
 import Layout from './components/Layout/Layout';
 import Conversation from './containers/Conversation';
 import { Container, Row } from 'react-bootstrap';

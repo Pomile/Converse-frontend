@@ -8,7 +8,7 @@ import attach from '../../../assets/images/attachment_2.png';
 
 
 export const ConversationCard = (props) => {
-    const { social, title, content, dateTime, attachment } = props.data;
+    const { id, social, title, content, dateTime, attachment, unread } = props.data;
     const { firstname, lastname } = props.data.user;
     let x;
     if (social === 'tweeter') {
@@ -18,17 +18,19 @@ export const ConversationCard = (props) => {
     } else {
         x = apple;
     }
-    let badge;
+    let badge ='';
     let icon;
     if (attachment) {
         icon = (<img src={attach} alt={"icon.png"} />);
     }
     if (unread > 0) {
-        
+        badge = (<div className={Classes.ConversationCard__Badge}>
+            {unread}
+        </div>)
     }
     const username = `${firstname} ${lastname}`
     return (
-        <div className={Classes.ConversationCard}>
+        <div className={Classes.ConversationCard} onClick={() => props.getConversation(id)}>
             <div className={Classes.ConversationCard__Social}>
                 <img src={x} alt={"social.png"} />
             </div>
@@ -46,7 +48,7 @@ export const ConversationCard = (props) => {
                         <p className={Classes.ConversationCard__Content}>{content}</p>
                     </div>
                     <div className={Classes.ConversationCard__ItemList}>
-                        
+                        {badge}
                         <div className={Classes.ConversationCard__Icon}>
                            {icon}
                         </div>

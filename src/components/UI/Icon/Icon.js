@@ -1,10 +1,11 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Icon = (props) => {
-    const style = ["fal fa-angle-down"].join(' ');
+    
     return (
         <div>
-            <i className={style}></i>
+            <FontAwesomeIcon icon={["fa", "angle-down"]} />
         </div>
         
     );

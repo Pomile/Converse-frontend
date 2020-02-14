@@ -7,7 +7,7 @@ export const ConversationDiv = (props) => {
     return (
         <div className={Classes.Conversation}>
             <ConversationTab status={props.status} getConversations={props.getConversations} />
-            <ConversationList data={props.data}/>
+            <ConversationList data={props.data} getConversation={props.getConversation} />
         </div>
 
     );

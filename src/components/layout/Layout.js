@@ -1,8 +1,4 @@
-import React from 'react';
-import Aux from '../../hoc/Wrapper';
-
-
-function Layout(props) {
+const Layout = (props) => {
     
     return props.children;
 }
