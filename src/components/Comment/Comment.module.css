@@ -1,0 +1,51 @@
+.Comment{
+    height: 520px;
+    width: 100%;
+    background-color: white;
+    overflow-y: auto;
+    border-left: 1px solid rgb(236, 236, 236);
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.Comment__form{
+    width: 273px;
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+    background-color: white;
+    padding-left: 15px;
+}
+.Comment__InputBase {
+  width: 273px;
+  height: 33px;
+  border-radius: 24px;
+  background-color: #adcfe9;
+  display: flex;
+  padding: 4px;
+  border: none;
+}
+
+.Comment__InputBase img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.Comment__input{
+    width: 221px;
+    background-color: transparent;
+    border: none;
+}
+.Comment__input:focus{
+    outline: none;
+}
+.Comment__InputButtion {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), inset 0 -2px 0 0 rgba(0, 0, 0, 0.1);
+  background-color: #6554c0;
+  color: white;
+}

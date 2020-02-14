@@ -4,6 +4,7 @@ import { Main } from '../components/Main/Main';
 import { ConversationDiv } from '../components/Conversation/Conversation';
 import { Toolbox } from '../components/Toolbox/Toolbox';
 import { MessageDiv } from '../components/Message/MessageDiv';
+import { CommentDiv } from '../components/Comment/CommentDiv';
 
 export class Conversation extends React.Component{
     constructor(props) {
@@ -89,6 +90,14 @@ export class Conversation extends React.Component{
      * get all comment by messageId
      * @param messageId
      */
+    getComments = (messageId) => {
+        this.services
+            .comments
+            .getComments(messageId)
+            .then((comments) => {
+                this.setState({ comments })
+            })
+    }
 
     render() {
         
@@ -108,16 +117,17 @@ export class Conversation extends React.Component{
                     </Col>
                     <Col className="no-gutter pt-0" lg="9">
                         <Row className="no-gutter pt-0"><Toolbox /></Row>
-                        <Row >
-                            <Col lg="8">
+                        <Row className="no-gutter">
+                            <Col className="no-gutter pr-0 " lg="8">
                                 
                                 <MessageDiv
                                     conversation={this.state.conversation}
                                     messages={this.state.messages}
                                     userId={this.state.userId}
+                                    getComments = {this.getComments}
                                 />
                             </Col>
-                            <Col lg="4">comments</Col>
+                            <Col className="no-gutter pl-0 " lg="4"><CommentDiv comments={this.state.comments}/></Col>
                         </Row>
                     </Col>
                 </Row>

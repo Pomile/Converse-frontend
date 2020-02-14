@@ -9,7 +9,7 @@ export const MessageDiv = (props) => {
             <h6 className={Classes.Message__Header}>Whatsapp for Business. Don't forget to start your free trial</h6>
             {props.conversation ? <div>
                 <Conversation data={props.conversation} />
-                <MessageList messages={props.messages} userId={props.userId} />
+                <MessageList messages={props.messages} userId={props.userId} getComments={props.getComments}/>
                 <form>
                     <textarea></textarea>
                 </form>
