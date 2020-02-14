@@ -12,6 +12,7 @@ export class MessagesService {
      * @param conversationId
      */
     async getMessages(conversationId) {
+    
         const messagesCopy = [...this.messages];
         const userCopy = [...this.users];
         const conversationMsg = messagesCopy
@@ -25,10 +26,11 @@ export class MessagesService {
                     return msg;
                 }
                 return null
-            }).filter((message) => message !==null);
-
+            }).filter((message) => message !== null);
+            
             return msgDetail;
         }
+        return [];
     }
 
     /**

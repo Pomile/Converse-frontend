@@ -1,0 +1,11 @@
+.Message{
+    padding-top: 1rem;
+    overflow: auto;
+    height: 520px;
+}
+
+.Message__Header{
+    font-size: 15px;
+    color: #212242;
+    margin-bottom: 15px;
+}

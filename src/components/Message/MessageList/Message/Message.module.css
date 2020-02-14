@@ -1,0 +1,54 @@
+.Message{
+    width: 100%;
+    height: auto;
+    padding: 0.4rem 1rem;
+}
+
+.Message__Header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+
+.Message__Owner{
+    font-size: small;
+    font-weight: bold;
+}
+
+
+.Message__Content{
+    font-size: small;
+    padding: 0.5rem;
+    border: 0.8px solid #e9edf0;
+}
+.Message__Content_Receive{
+    border-radius: 10.1px 10.1px 10.1px 0px;
+    background-color: #6554c0;
+    color: #dce2ee;
+}
+.Message__Content_Sent{
+    border-radius: 10.1px 10.1px 0px 10.1px;
+    background-color: #f1eff9;
+    color: #5e6c84;
+}
+
+.Message__info{
+    display: flex;
+}
+.Message__DateTime{
+  opacity: 0.5;
+  font-family: IBMPlexSans;
+  font-size: 12px;
+  color: #212242;
+}
+
+.Message_Check_Double_Mark{
+    color: #6554c0;
+    font-size: small;
+    vertical-align: middle;
+}
+
+.Message_Check_Single_Mark{
+    color: #8b79ee;
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { Main } from '../components/Main/Main';
 import { ConversationDiv } from '../components/Conversation/Conversation';
+import { Toolbox } from '../components/Toolbox/Toolbox';
+import { MessageDiv } from '../components/Message/MessageDiv';
 
 export class Conversation extends React.Component{
     constructor(props) {
@@ -51,19 +53,29 @@ export class Conversation extends React.Component{
     
     /**
      * get all messages by conversation id
-     * @param conversationId
+     * @param id
      */
     getConversation = (id) => {
         this.services
             .conversations
-            .getConversation(id).then((conversation) => {
+            .getConversationsById(id).then((conversation) => {
                 this.setState({ conversation });
+                this.getMessages(id);
             });
+        
     }
 
     /**
-     * get a message
+     * get all messages by conversation Id
+     * @param conversationId
      */
+    getMessages = (conversationId) => {
+        this.services
+            .messages.getMessages(conversationId)
+            .then((messages) => {
+                this.setState({ messages })
+            });
+    }
 
     /**
      * Save a message handler
@@ -79,6 +91,7 @@ export class Conversation extends React.Component{
      */
 
     render() {
+        
         return (
             <Main>
                 <Row bg={"primary"}>
@@ -87,13 +100,23 @@ export class Conversation extends React.Component{
                     </Col>
                 </Row>
                 <Row className="no-gutter">
-                    <Col lg="4">
-                        <ConversationDiv status={this.state.status} data={this.state.conversations} getConversations={this.getConversations} />
+                    <Col className="no-gutter pr-0" lg="3">
+                        <ConversationDiv
+                            status={this.state.status} data={this.state.conversations} getConversations={this.getConversations}
+                            getConversation = {this.getConversation}
+                        />
                     </Col>
-                    <Col lg="8">
-                        <Row></Row>
+                    <Col className="no-gutter pt-0" lg="9">
+                        <Row className="no-gutter pt-0"><Toolbox /></Row>
                         <Row >
-                            <Col lg="8">messages</Col>
+                            <Col lg="8">
+                                
+                                <MessageDiv
+                                    conversation={this.state.conversation}
+                                    messages={this.state.messages}
+                                    userId={this.state.userId}
+                                />
+                            </Col>
                             <Col lg="4">comments</Col>
                         </Row>
                     </Col>

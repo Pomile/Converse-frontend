@@ -32,6 +32,7 @@ export class ConversationService {
         const usersCopy = [...this.users]
         const conversation = conversationsCopy.find((c) => c.id === conversationId);
         if (conversation !== -1) {
+            
             const user = usersCopy.find((x) => x.id === conversation.userId);
             conversation.user = user;
             return conversation

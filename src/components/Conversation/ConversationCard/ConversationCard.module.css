@@ -62,7 +62,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space:nowrap;
-  width: 250px;
+  width: 220px;
 }
 .ConversationCard__Content{
   color: #595e8a;
