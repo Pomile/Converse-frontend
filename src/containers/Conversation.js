@@ -19,9 +19,9 @@ export class Conversation extends React.Component{
             userId: 1,
             conversation: null,
             messageId: null,
-            message: null,
+            message: '',
             comments: [],
-            comment: null
+            comment: ''
         }
 
     }
@@ -81,7 +81,34 @@ export class Conversation extends React.Component{
     /**
      * Save a message handler
      */
+    saveMesssage = (event, message) => {
+        if (event.charCode === 13 && message.trim() !== '') {
+            const conversation = { ...this.state.conversation };
+            const conversationId = conversation.id;
+            const userId = this.state.userId;
+            const obj = { userId, conversationId, content: message.trim()  }
+            this.services
+                .messages
+                .saveMessage(obj)
+                .then(() => {
+                    this.setState({ message: '' });
+                    this.getMessages(conversationId);
+                });
+        }
+        
+    }
 
+    // handle input change
+    onChange = event => {
+       
+        const target = event.target;
+        const name = target.name;
+        
+        this.setState((state, props) => ({
+        
+                [name]: target.value
+        }));
+    }
     /** 
      * Save a comment
     */
@@ -99,13 +126,19 @@ export class Conversation extends React.Component{
             })
     }
 
+    gotoElement = (id) => {
+        window.location.href = `${id}`;
+    }
+
     render() {
-        
         return (
             <Main>
                 <Row bg={"primary"}>
                     <Col sm={"12"}>
-                        <h4 className={"pl-3 pt-2 pb-2 border border-left-0 border-right-0"}>Conversation</h4>
+                        <h4
+                            className={"pl-3 pt-2 pb-2 border border-left-0 border-right-0"}>
+                            Conversation
+                        </h4>
                     </Col>
                 </Row>
                 <Row className="no-gutter">
@@ -124,7 +157,11 @@ export class Conversation extends React.Component{
                                     conversation={this.state.conversation}
                                     messages={this.state.messages}
                                     userId={this.state.userId}
-                                    getComments = {this.getComments}
+                                    getComments={this.getComments}
+                                    onChange={this.onChange}
+                                    saveMessage={this.saveMesssage}
+                                    message={this.state.message}
+                                    gotoElement = {this.gotoElement}
                                 />
                             </Col>
                             <Col className="no-gutter pl-0 " lg="4"><CommentDiv comments={this.state.comments}/></Col>

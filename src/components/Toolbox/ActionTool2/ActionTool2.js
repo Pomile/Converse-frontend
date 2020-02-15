@@ -14,5 +14,5 @@ export const ActionTool2 = (props) => {
             </button>
             <button className={"btn"}><FontAwesomeIcon icon={faUserCircle} /></button>
         </div>
-    )   
+    );
 }
