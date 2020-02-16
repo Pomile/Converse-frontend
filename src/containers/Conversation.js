@@ -10,7 +10,7 @@ export class Conversation extends React.Component{
     constructor(props) {
         super(props);
 
-        // Posts Service Object
+        // Services Object
         this.services = this.props.services;
         this.state = {
             status: 'open',
@@ -36,7 +36,8 @@ export class Conversation extends React.Component{
     }
 
     /* 
-        get all conversations handler
+     * get all conversations handler
+     * 
     */
     getConversations = (status) => {
         this.setState({ status });
@@ -49,13 +50,9 @@ export class Conversation extends React.Component{
     }
     
     /**
-     * get a conversation
-     */
-    
-    /**
      * get all messages by conversation id
      * @param id
-     */
+    */
     getConversation = (id) => {
         this.services
             .conversations
@@ -80,6 +77,8 @@ export class Conversation extends React.Component{
 
     /**
      * Save a message handler
+     * @param event
+     * @param message
      */
     saveMesssage = (event, message) => {
         if (event.charCode === 13 && message.trim() !== '') {
@@ -98,7 +97,10 @@ export class Conversation extends React.Component{
         
     }
 
-    // handle input change
+    /**
+    * Handle input change
+    * @param event
+    */
     onChange = event => {
        
         const target = event.target;
@@ -110,8 +112,26 @@ export class Conversation extends React.Component{
         }));
     }
     /** 
-     * Save a comment
+     * Post a comment
+     * @param event
+     * @param comment
     */
+    postComment = (event, comment) => {
+        event.preventDefault();
+        const messageId = this.state.messageId;
+        if (comment.trim() !== '' && messageId !== null) {
+            const userId = this.state.userId;
+            const obj = { userId, messageId, content: comment.trim()  }
+            this.services
+                .comments
+                .saveComment(obj)
+                .then(() => {
+                    this.setState({ comment: '' });
+                    this.getComments(messageId);
+                });
+        }
+        
+    }
     
     /**
      * get all comment by messageId
@@ -122,7 +142,8 @@ export class Conversation extends React.Component{
             .comments
             .getComments(messageId)
             .then((comments) => {
-                this.setState({ comments })
+                this.setState({ comments, messageId })
+
             })
     }
 
@@ -164,7 +185,14 @@ export class Conversation extends React.Component{
                                     gotoElement = {this.gotoElement}
                                 />
                             </Col>
-                            <Col className="no-gutter pl-0 " lg="4"><CommentDiv comments={this.state.comments}/></Col>
+                            <Col className="no-gutter pl-0 " lg="4">
+                                <CommentDiv
+                                    comments={this.state.comments}
+                                    postComment={this.postComment}
+                                    comment={this.state.comment}
+                                    onChange={this.onChange}
+                                />
+                            </Col>
                         </Row>
                     </Col>
                 </Row>
