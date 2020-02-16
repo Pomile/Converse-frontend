@@ -41,6 +41,14 @@ export class MessagesService {
         const index = this.messages.findIndex(({ id }) => message.id === id);
         if (index === -1) {
             message.id = uuid();
+            const date = new Date();
+            message.dateTime = date.toLocaleTimeString('en-GB', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+                time: 'numeric'
+            });
+            console.log(message);
             this.messages.push(message);
         } else {
             this.messages.splice(index, 1, message);

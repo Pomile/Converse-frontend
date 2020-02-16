@@ -10,12 +10,12 @@ export const Conversation = (props) => {
             <div className={Classes.Conversation__body}>
                 <div className={Classes.Conversation__Header}>
                     <div className={Classes.Conversation_Owner}>{username}</div>
-                    <div className={Classes.Conversation__Reply}>
+                    <button className={Classes.Conversation__Reply} onClick={() => props.gotoElement("#message")}>
                         <span>
                             <input type={"image"} src={img} alt={"Reply"} />
                         </span>
                         Reply this conversation
-                </div>
+                </button>
                 </div>
                 <blockquote className={Classes.Conversation__Content}>
                    {props.data.content}

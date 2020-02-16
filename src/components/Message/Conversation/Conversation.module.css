@@ -32,6 +32,8 @@
     font-family: IBMPlexSans;
     font-weight: normal;
     line-height: normal;
+    background: none;
+    border:  none;
 }
 
 .Conversation__Content{
