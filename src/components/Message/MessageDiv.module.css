@@ -26,3 +26,9 @@
     padding: 0.5rem;
     font-size: small;
 }
+
+@media (max-width: 576px){
+    .Message{
+        padding: 15px;
+    }
+}

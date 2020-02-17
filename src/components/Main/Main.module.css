@@ -13,5 +13,6 @@
 @media (max-width: 991px){
     .Main{
          width: 100%;
+         padding-left: 0px;
     }
 }

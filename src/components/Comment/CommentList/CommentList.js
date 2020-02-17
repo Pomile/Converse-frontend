@@ -1,5 +1,7 @@
 import React from 'react';
 import { Comment } from './Comment/Comment';
+import Classes from './CommentList.module.css';
+
 
 export const CommentList = (props) => {
     const { comments } = props;
@@ -7,7 +9,7 @@ export const CommentList = (props) => {
         key={comment.id}
     />): null;
     return (
-        <div className={""}>
+        <div className={Classes.CommentList}>
            {comm}
         </div>
     ); 
