@@ -1,5 +1,13 @@
-
+/** 
+ * Conversation service
+ * @class ConversationService
+ *  */
 export class ConversationService {
+    /**
+     * Constructor method
+     * @param {array} data 
+     * @param {array} users 
+     */
     constructor(data, users) {
         this.conversations = data;
         this.users = users;
@@ -8,6 +16,8 @@ export class ConversationService {
     /**
      * Gets up-to-date list of conversations by status.
      * conversation status could be open, archived, snooze, or trash
+     * @param {string} status
+     * @returns {Object} Array Object
      */
     async getConversationsByStatus(status) {
         const conversationsCopy = [...this.conversations];
@@ -27,6 +37,11 @@ export class ConversationService {
         return [];
     }
 
+    /**
+     * Get a converstation by id
+     * @param {string} conversationId 
+     * @returns {object} conversation
+     */
     async getConversationsById(conversationId) {
         const conversationsCopy = [...this.conversations];
         const usersCopy = [...this.users]

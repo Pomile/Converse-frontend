@@ -1,7 +1,14 @@
 import uuid from "uuid/v1";
 
-
+/**
+ * @class CommentService
+ */
 export class CommentsService {
+    /**
+     * 
+     * @param {array} comments 
+     * @param {array} users 
+     */
     constructor(comments, users) {
         this.comments = comments;
         this.users = users;
@@ -10,6 +17,7 @@ export class CommentsService {
     /**
      * Gets up-to-date list of comments by messageId
      * @param messageId
+     * @returns {object}
      */
     async getComments(messageId) {
         
@@ -33,8 +41,9 @@ export class CommentsService {
     }
 
     /**
-     * Saves comment if it has id, adds new one with new id otherwise
-     * @param comment
+     * Saves comment
+     * @param {object} comment
+     * @returns {object}
      */
     async saveComment(comment) {
         const index = this.comments.findIndex(({ id }) => comment.id === id);

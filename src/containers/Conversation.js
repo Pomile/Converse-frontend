@@ -45,6 +45,7 @@ export class Conversation extends React.Component{
     /**
      * get all conversations handler
      * @param status
+     * 
      */
      
     getConversations = (status) => {
@@ -164,6 +165,9 @@ export class Conversation extends React.Component{
         }
     }
 
+    /**
+     * Goto a block element by id
+     */
     gotoElement = (id) => {
         window.location.href = `${id}`;
     }
