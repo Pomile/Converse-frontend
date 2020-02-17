@@ -10,7 +10,7 @@
   border-radius: 24px;
   background-color: #f6fafd;
   font-size: smaller;
-  padding: 0.4rem;
+  padding: 0.5rem;
 }
 
 .Comment__UserImage img {
@@ -23,4 +23,9 @@
   padding: 1rem;
   font-size: small;
   text-align: center;
+}
+@media (max-width: 576px){
+  .Comment__Content{
+    width: 95%;
+  }
 }

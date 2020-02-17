@@ -5,6 +5,8 @@ import { ConversationDiv } from '../components/Conversation/Conversation';
 import { Toolbox } from '../components/Toolbox/Toolbox';
 import { MessageDiv } from '../components/Message/MessageDiv';
 import { CommentDiv } from '../components/Comment/CommentDiv';
+import { ToggleComponent } from '../components/ToggleComponent/ToggleComponent';
+import { toggleComponent } from '../shared/toggleComponent';
 
 export class Conversation extends React.Component{
     constructor(props) {
@@ -12,6 +14,9 @@ export class Conversation extends React.Component{
 
         // Services Object
         this.services = this.props.services;
+        // window viewport
+        this.width = window.visualViewport.width;
+        // state property
         this.state = {
             status: 'open',
             messages: [],
@@ -21,24 +26,27 @@ export class Conversation extends React.Component{
             messageId: null,
             message: '',
             comments: [],
-            comment: ''
+            comment: '',
+            display: {
+                conversation: true,
+                messages: true,
+                comments: false
+            }
         }
 
     }
     
     componentDidMount() {
-        // console.log("[ComponentDidMount]Conversation.js");
+        
         this.getConversations(this.state.status);
     }
 
-    componentDidUpdate() {
-        // console.log("[ComponentDidUpdate]Conversation.js");
-    }
 
-    /* 
+    /**
      * get all conversations handler
-     * 
-    */
+     * @param status
+     */
+     
     getConversations = (status) => {
         this.setState({ status });
         this.services
@@ -50,7 +58,7 @@ export class Conversation extends React.Component{
     }
     
     /**
-     * get all messages by conversation id
+     * get a conversation
      * @param id
     */
     getConversation = (id) => {
@@ -73,6 +81,14 @@ export class Conversation extends React.Component{
             .then((messages) => {
                 this.setState({ messages })
             });
+        if ((this.width >= 576 && this.width <= 768)
+            || (this.width >= 300 && this.width <= 576)) {
+            const display = { ...this.state.display }
+            display.conversation = false;
+            display.messages = true;
+            display.comments = false;
+            this.setState({ display });
+        }
     }
 
     /**
@@ -97,20 +113,6 @@ export class Conversation extends React.Component{
         
     }
 
-    /**
-    * Handle input change
-    * @param event
-    */
-    onChange = event => {
-       
-        const target = event.target;
-        const name = target.name;
-        
-        this.setState((state, props) => ({
-        
-                [name]: target.value
-        }));
-    }
     /** 
      * Post a comment
      * @param event
@@ -144,37 +146,80 @@ export class Conversation extends React.Component{
             .then((comments) => {
                 this.setState({ comments, messageId })
 
-            })
+            });
+        const display = { ...this.state.display }
+        if ((this.width >= 576 && this.width <= 768)
+            || (this.width >= 300 && this.width <= 576)) {
+            
+            display.conversation = false;
+            display.messages = false;
+            display.comments = true;
+            this.setState({ display });
+        } else {
+
+            display.conversation = true;
+            display.messages = true;
+            display.comments = true;
+            this.setState({ display });
+        }
     }
 
     gotoElement = (id) => {
         window.location.href = `${id}`;
     }
 
+    /**
+     * This handler Toggles component when on small device
+     */
+    toggleComponentHandler = () => {
+        toggleComponent(this);
+    }
+    /**
+    * Handle input change
+    * @param event
+    */
+    onChange = event => {
+
+        const target = event.target;
+        const name = target.name;
+
+        this.setState((state, props) => ({
+
+            [name]: target.value
+        }));
+    }
+
+
     render() {
+        const display = this.state.display;
         return (
             <Main>
-                <Row bg={"primary"}>
+                <Row bg={"primary no-gutter"}><ToggleComponent toggleComponentHandler={this.toggleComponentHandler}/></Row>
+                <Row bg={"primary no-gutter"}>
                     <Col sm={"12"}>
+                    
                         <h4
-                            className={"pl-3 pt-2 pb-2 border border-left-0 border-right-0"}>
-                            Conversation
+                               className={"pl-3 pt-2 pb-2 border border-left-0 border-right-0"}>
+                            Conversation 
                         </h4>
                     </Col>
                 </Row>
                 <Row className="no-gutter">
-                    <Col className="no-gutter pr-0" lg="3">
-                        <ConversationDiv
-                            status={this.state.status} data={this.state.conversations} getConversations={this.getConversations}
-                            getConversation = {this.getConversation}
-                        />
+                    <Col className="no-gutter pr-0" lg="3" md={6} sm={12}>
+                        {
+                            display.conversation ? (<ConversationDiv
+                                status={this.state.status} data={this.state.conversations} getConversations={this.getConversations}
+                                getConversation={this.getConversation}
+                            />): null
+                            
+                       }
                     </Col>
-                    <Col className="no-gutter pt-0" lg="9">
-                        <Row className="no-gutter pt-0"><Toolbox /></Row>
+                    <Col className="no-gutter pt-0" lg="9" md={6} sm={12}>
+                        <Row className="no-gutter"><Toolbox /></Row>
                         <Row className="no-gutter">
-                            <Col className="no-gutter pr-0 " lg="8">
+                            <Col className="no-gutter pr-0" lg="8" md="12">
                                 
-                                <MessageDiv
+                                {display.messages ? (<MessageDiv
                                     conversation={this.state.conversation}
                                     messages={this.state.messages}
                                     userId={this.state.userId}
@@ -182,15 +227,17 @@ export class Conversation extends React.Component{
                                     onChange={this.onChange}
                                     saveMessage={this.saveMesssage}
                                     message={this.state.message}
-                                    gotoElement = {this.gotoElement}
+                                    gotoElement={this.gotoElement}
                                 />
+                                ) : null}
                             </Col>
-                            <Col className="no-gutter pl-0 " lg="4">
-                                <CommentDiv
+                            <Col className="no-gutter pl-0 " lg="4" md="0" sm="12">
+                                 <CommentDiv
                                     comments={this.state.comments}
                                     postComment={this.postComment}
                                     comment={this.state.comment}
                                     onChange={this.onChange}
+                                    display = {this.state.display}
                                 />
                             </Col>
                         </Row>

@@ -49,3 +49,23 @@
   background-color: #6554c0;
   color: white;
 }
+
+@media (max-width: 576px){
+    .Comment{
+        padding: 15px;
+        padding-bottom: 80px;
+    }
+
+    .Comment__form{
+      width: 95%;
+    }
+
+    .Comment__InputBase{
+      width: 95%;
+    }
+
+    .Comment__input{
+      width: 95%;
+    }
+
+}

@@ -1,0 +1,15 @@
+.ToggleComponent{
+    position: absolute;
+    top: 4px;
+    z-index: 20;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: none;
+    right: 20px;
+}
+
+@media (max-width: 576px ){
+    .ToggleComponent{
+        display: block;
+    }
+}
