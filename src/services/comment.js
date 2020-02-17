@@ -36,11 +36,12 @@ export class CommentsService {
      * Saves comment if it has id, adds new one with new id otherwise
      * @param comment
      */
-    async saveMessage(comment) {
+    async saveComment(comment) {
         const index = this.comments.findIndex(({ id }) => comment.id === id);
         if (index === -1) {
             comment.id = uuid();
-            this.messages.push(comment);
+            console.log(comment);
+            this.comments.push(comment);
         } else {
             this.comments.splice(index, 1, comment);
         }

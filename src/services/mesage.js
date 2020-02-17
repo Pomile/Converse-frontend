@@ -48,7 +48,6 @@ export class MessagesService {
                 year: 'numeric',
                 time: 'numeric'
             });
-            console.log(message);
             this.messages.push(message);
         } else {
             this.messages.splice(index, 1, message);

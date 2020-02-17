@@ -8,11 +8,18 @@ export const CommentDiv = (props) => {
         <div className={Classes.Comment}>
             <h6 className={"pt-2 pl-2 pb-3"}>Comments</h6>
             <CommentList comments={props.comments}/>
-            <form className={Classes.Comment__form} >
+            <form className={Classes.Comment__form} onSubmit={(event) => props.postComment(event,props.comment) } >
                 <div className={Classes.Comment__InputBase}>
                     <img src={alex} alt={"A"} />
-                    <input type={"text"} name={"comment"} id={"comment"} className={Classes.Comment__input}/>
-                    <button type={"button"} className={Classes.Comment__InputButtion}>A</button>
+                    <input
+                        type={"text"}
+                        name={"comment"}
+                        id={"comment"}
+                        className={Classes.Comment__input}
+                        onChange={(event) => props.onChange(event) }
+                        value={props.comment}
+                    />
+                    <button type={"button"} className={Classes.Comment__InputButtion} onClick={(event) => props.postComment(event, props.comment)}>A</button>
                 </div>
             </form>
         </div>
