@@ -81,7 +81,6 @@ export class Conversation extends React.Component{
                 this.setState({ conversation });
                 this.getMessages(id);
             });
-        
     }
 
     /**
