@@ -54,10 +54,13 @@
     .Comment{
         padding: 15px;
         padding-bottom: 80px;
+        overflow-y: scroll;
+        height: 100%;
     }
 
     .Comment__form{
       width: 95%;
+      
     }
 
     .Comment__InputBase{
