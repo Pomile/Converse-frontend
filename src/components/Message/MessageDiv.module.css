@@ -1,7 +1,7 @@
 .Message{
     padding-top: 1rem;
-    overflow: auto;
-    height: 100vh;
+    overflow-y: auto;
+    height: 520px;
 }
 
 .Message__Header{
