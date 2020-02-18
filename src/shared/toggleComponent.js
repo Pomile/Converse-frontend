@@ -1,3 +1,7 @@
+/**
+ * Toggles component in conversation container
+ * @param {object} This 
+ */
 export const toggleComponent = (This) => {
     const display = { ...This.state.display }
     const smallDeviceViewPort = (This.width >= 576 && This.width <= 768)

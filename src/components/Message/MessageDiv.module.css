@@ -1,7 +1,7 @@
 .Message{
     padding-top: 1rem;
     overflow: auto;
-    height: 520px;
+    height: 100vh;
 }
 
 .Message__Header{
@@ -30,5 +30,8 @@
 @media (max-width: 576px){
     .Message{
         padding: 15px;
+        padding-bottom: 30px;
+        overflow-y: scroll;
+        height: 100%;
     }
 }

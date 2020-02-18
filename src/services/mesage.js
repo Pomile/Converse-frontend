@@ -1,7 +1,14 @@
 import uuid from "uuid/v1";
 
-
+/**
+ * @class MessageService
+ */
 export class MessagesService {
+    /**
+     * Constructor method
+     * @param {array} messages 
+     * @param {array} users 
+     */
     constructor(messages, users) {
         this.messages = messages;
         this.users = users;
@@ -10,6 +17,7 @@ export class MessagesService {
     /**
      * Gets up-to-date list of messages by conversationId
      * @param conversationId
+     * @returns {array} conversations
      */
     async getMessages(conversationId) {
     
@@ -34,8 +42,9 @@ export class MessagesService {
     }
 
     /**
-     * Saves message if it has id, adds new one with new id otherwise
-     * @param message
+     * Saves a message
+     * @param {object} message
+     * @return {object} message
      */
     async saveMessage(message) {
         const index = this.messages.findIndex(({ id }) => message.id === id);

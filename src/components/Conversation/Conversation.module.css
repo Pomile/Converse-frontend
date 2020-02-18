@@ -6,3 +6,9 @@
     border-right: 1px solid rgb(236, 236, 236);
     margin-top: -8px;
 }
+
+@media (max-width: 576px){
+    .Conversation{
+        overflow-y: scroll;
+    }
+}

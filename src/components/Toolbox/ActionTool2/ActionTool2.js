@@ -6,8 +6,9 @@ import { UserGroup } from './UserGroup/UserGroup';
 import Classes from './ActionTool2.module.css';
 
 export const ActionTool2 = (props) => {
+    const style = ["btn-group pr-5", Classes.ActionTool2].join(' ');
     return (
-        <div className={"btn-group pr-5"}>
+        <div className={style}>
             <button className={"btn"}><UserGroup /></button>
             <button className={"btn"}>
                 <div className={Classes.ActionTool2__Button}>Assign</div>

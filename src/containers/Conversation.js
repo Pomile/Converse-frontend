@@ -45,6 +45,7 @@ export class Conversation extends React.Component{
     /**
      * get all conversations handler
      * @param status
+     * 
      */
      
     getConversations = (status) => {
@@ -164,6 +165,9 @@ export class Conversation extends React.Component{
         }
     }
 
+    /**
+     * Goto a block element by id
+     */
     gotoElement = (id) => {
         window.location.href = `${id}`;
     }
@@ -219,7 +223,7 @@ export class Conversation extends React.Component{
                         <Row className="no-gutter">
                             <Col className="no-gutter pr-0" lg="8" md="12">
                                 
-                                {display.messages ? (<MessageDiv
+                                { display.messages ? (<MessageDiv
                                     conversation={this.state.conversation}
                                     messages={this.state.messages}
                                     userId={this.state.userId}
@@ -232,13 +236,13 @@ export class Conversation extends React.Component{
                                 ) : null}
                             </Col>
                             <Col className="no-gutter pl-0 " lg="4" md="0" sm="12">
-                                 <CommentDiv
+                                { display.comments ? <CommentDiv
                                     comments={this.state.comments}
                                     postComment={this.postComment}
                                     comment={this.state.comment}
                                     onChange={this.onChange}
-                                    display = {this.state.display}
-                                />
+                                    display={this.state.display}
+                                />: null }
                             </Col>
                         </Row>
                     </Col>

@@ -3,3 +3,9 @@
     flex-flow: nowrap;
     justify-content: space-around;
 }
+
+@media (max-width: 576px){
+    .ItemGroup{
+        display: none;
+    }
+}
