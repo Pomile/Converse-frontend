@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "http://localhost:8080/static/css/main.b04bdaad.chunk.css",
-    "main.js": "http://localhost:8080/static/js/main.123ef297.chunk.js",
-    "main.js.map": "http://localhost:8080/static/js/main.123ef297.chunk.js.map",
+    "main.css": "http://localhost:8080/static/css/main.b22ef7c8.chunk.css",
+    "main.js": "http://localhost:8080/static/js/main.2f46e2f2.chunk.js",
+    "main.js.map": "http://localhost:8080/static/js/main.2f46e2f2.chunk.js.map",
     "runtime-main.js": "http://localhost:8080/static/js/runtime-main.bd85243f.js",
     "runtime-main.js.map": "http://localhost:8080/static/js/runtime-main.bd85243f.js.map",
     "static/css/2.47e06e2e.chunk.css": "http://localhost:8080/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.87f34627.chunk.js": "http://localhost:8080/static/js/2.87f34627.chunk.js",
-    "static/js/2.87f34627.chunk.js.map": "http://localhost:8080/static/js/2.87f34627.chunk.js.map",
+    "static/js/2.5b2d7282.chunk.js": "http://localhost:8080/static/js/2.5b2d7282.chunk.js",
+    "static/js/2.5b2d7282.chunk.js.map": "http://localhost:8080/static/js/2.5b2d7282.chunk.js.map",
     "index.html": "http://localhost:8080/index.html",
-    "precache-manifest.a26047b676dcf28621ccfe5169e216c5.js": "http://localhost:8080/precache-manifest.a26047b676dcf28621ccfe5169e216c5.js",
+    "precache-manifest.a7db37268568003e5f62f4ba62f9254f.js": "http://localhost:8080/precache-manifest.a7db37268568003e5f62f4ba62f9254f.js",
     "service-worker.js": "http://localhost:8080/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "http://localhost:8080/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.b04bdaad.chunk.css.map": "http://localhost:8080/static/css/main.b04bdaad.chunk.css.map",
-    "static/js/2.87f34627.chunk.js.LICENSE.txt": "http://localhost:8080/static/js/2.87f34627.chunk.js.LICENSE.txt"
+    "static/css/main.b22ef7c8.chunk.css.map": "http://localhost:8080/static/css/main.b22ef7c8.chunk.css.map",
+    "static/js/2.5b2d7282.chunk.js.LICENSE.txt": "http://localhost:8080/static/js/2.5b2d7282.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bd85243f.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.87f34627.chunk.js",
-    "static/css/main.b04bdaad.chunk.css",
-    "static/js/main.123ef297.chunk.js"
+    "static/js/2.5b2d7282.chunk.js",
+    "static/css/main.b22ef7c8.chunk.css",
+    "static/js/main.2f46e2f2.chunk.js"
   ]
 }
