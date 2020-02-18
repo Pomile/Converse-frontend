@@ -30,17 +30,29 @@ export class Conversation extends React.Component{
             display: {
                 conversation: true,
                 messages: true,
-                comments: false
+                comments: true
             }
         }
 
     }
-    
+    componentWillMount() {
+        const display = { ...this.state.display }
+        const smallDeviceViewPort = (this.width >= 576 && this.width <= 768)
+            || (this.width >= 300 && this.width <= 576);
+
+        if (smallDeviceViewPort) {
+
+            display.conversation = true;
+            display.messages = false;
+            display.comments = false;
+            this.setState({ display });
+        }
+    }
+
     componentDidMount() {
         
         this.getConversations(this.state.status);
     }
-
 
     /**
      * get all conversations handler
@@ -218,12 +230,12 @@ export class Conversation extends React.Component{
                             
                        }
                     </Col>
-                    <Col className="no-gutter pt-0" lg="9" md={6} sm={12}>
+                    {display.comments || display.messages ? <Col className="no-gutter pt-0" lg="9" md={6} sm={12}>
                         <Row className="no-gutter"><Toolbox /></Row>
                         <Row className="no-gutter">
                             <Col className="no-gutter pr-0" lg="8" md="12">
                                 
-                                { display.messages ? (<MessageDiv
+                                {display.messages ? (<MessageDiv
                                     conversation={this.state.conversation}
                                     messages={this.state.messages}
                                     userId={this.state.userId}
@@ -236,16 +248,16 @@ export class Conversation extends React.Component{
                                 ) : null}
                             </Col>
                             <Col className="no-gutter pl-0 " lg="4" md="0" sm="12">
-                                { display.comments ? <CommentDiv
+                                {display.comments ? <CommentDiv
                                     comments={this.state.comments}
                                     postComment={this.postComment}
                                     comment={this.state.comment}
                                     onChange={this.onChange}
                                     display={this.state.display}
-                                />: null }
+                                /> : null}
                             </Col>
                         </Row>
-                    </Col>
+                    </Col> : null}
                 </Row>
             </Main>
         )
