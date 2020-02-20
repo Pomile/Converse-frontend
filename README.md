@@ -1,4 +1,8 @@
 # simpu-frontend-test
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/538d8b4a-0422-4964-ae85-b5c7a10114bd/deploy-status)](https://app.netlify.com/sites/simpu-frontend-test/deploys)
+
+
 This is web application prototype that models a real life application which allows a user to join a conversation and contribute to it by replying with message(s) and adding comments to the message.
 
 ![index](https://res.cloudinary.com/pomile/image/upload/v1581930705/public/index_qcuhxl.jpg)
@@ -15,7 +19,7 @@ This is web application prototype that models a real life application which allo
 * React
 
 ## Deployment
-[simpu-frontend-test](https://converse-biz.netlidy.com)
+[simpu-frontend-test](https://simpu-frontend-test.netlify.com)
 
 ## Contributor
 
