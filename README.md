@@ -1,6 +1,6 @@
 # Converse
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/538d8b4a-0422-4964-ae85-b5c7a10114bd/deploy-status)](https://app.netlify.com/sites/simpu-frontend-test/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/538d8b4a-0422-4964-ae85-b5c7a10114bd/deploy-status)](https://app.netlify.com/sites/coverse/deploys)
 
 
 This is web application prototype that models a real life application which allows a user to join a conversation and contribute to it by replying with message(s) and adding comments to the message.
@@ -19,7 +19,7 @@ This is web application prototype that models a real life application which allo
 * React
 
 ## Deployment
-[converse](https://converse.netlify.com)
+[converse](https://coverse.netlify.com)
 
 ## Contributor
 
