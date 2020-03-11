@@ -19,7 +19,7 @@ This is web application prototype that models a real life application which allo
 * React
 
 ## Deployment
-[simpu-frontend-test](https://simpu-frontend-test.netlify.com)
+[converse](https://converse.netlify.com)
 
 ## Contributor
 
